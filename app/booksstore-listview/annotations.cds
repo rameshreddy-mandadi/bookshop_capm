@@ -1,12 +1,24 @@
 using BookstoreService as service from '../../srv/service';
+using from '@sap/cds/common';
+
 annotate service.Books with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
                 $Type : 'UI.DataField',
+                Value : title,
+                Label : 'Title',
+            },
+            {
+                $Type : 'UI.DataField',
                 Label : 'Published On',
                 Value : publishedOn,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : gener_code,
+                Label : 'Gener',
             },
             {
                 $Type : 'UI.DataField',
@@ -21,7 +33,16 @@ annotate service.Books with @(
             {
                 $Type : 'UI.DataField',
                 Value : stock,
-                Label : 'stock',
+                Label : 'Stock',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : status_code,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : currency_code,
+                Label : 'Currency',
             },
         ],
     },
@@ -54,7 +75,7 @@ annotate service.Books with @(
         {
             $Type : 'UI.DataField',
             Label : 'Gener',
-            Value : gener,
+            Value : gener_code,
         },
         {
             $Type : 'UI.DataField',
@@ -96,7 +117,7 @@ annotate service.Books with @(
         },
         Description : {
             $Type : 'UI.DataField',
-            Value : gener,
+            Value : gener_code,
         },
         TypeImageUrl : 'sap-icon://batch-payments',
     },
@@ -223,5 +244,30 @@ annotate service.BookStatus with {
     code @(
         Common.Text : displayText,
         Common.Text.@UI.TextArrangement : #TextOnly,
+)};
+
+annotate service.Books with {
+    currency @Common.ValueListWithFixedValues : true
+};
+
+annotate service.Currencies with {
+    code @Common.Text : symbol
+};
+
+annotate service.Books with {
+    gener @(
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'GenersVH',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : gener_code,
+                    ValueListProperty : 'description',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true,
+        Common.ExternalID : gener.code,
 )};
 

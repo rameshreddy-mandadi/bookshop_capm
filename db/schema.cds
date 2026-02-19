@@ -25,6 +25,18 @@ entity Geners {
         description : String;
 }
 
+type gener : String enum{
+    Fiction = 'Fiction';
+    Science = 'Science';
+    Cooking = 'Cooking';
+    Fantasy = 'Fantasy';
+    Hobby = 'Hobby';
+    Adventure = 'Adventure';
+    SelfHelp = 'Self-Help';
+    Art = 'Art';
+    Children = 'Children';
+};
+
 entity BookStatus {
     key code        : String(1) enum {
             Available = 'A';

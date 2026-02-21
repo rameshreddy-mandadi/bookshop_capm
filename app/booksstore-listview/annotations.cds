@@ -38,6 +38,7 @@ annotate service.Books with @(
             {
                 $Type : 'UI.DataField',
                 Value : status_code,
+                Label : 'Status Code',
             },
             {
                 $Type : 'UI.DataField',
@@ -104,6 +105,11 @@ annotate service.Books with @(
             Label : 'Price',
             Value : price,
         },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'BookstoreService.addStock',
+            Label : 'Add Stock',
+        },
     ],
     UI.SelectionFields : [
         status_code,
@@ -166,6 +172,23 @@ annotate service.Books with @(
             },
         ],
     },
+    UI.Identification : [
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'BookstoreService.addStock',
+            Label : 'Add Stock',
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'BookstoreService.changePublishDate',
+            Label : 'Change Publish Date',
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'BookstoreService.changeStatus',
+            Label : 'Change Status',
+        },
+    ],
 );
 
 annotate service.Books with {
@@ -223,7 +246,7 @@ annotate service.Books with {
     status @(
         Common.Text : status.displayText,
         Common.Text.@UI.TextArrangement : #TextOnly,
-        Common.Label : 'StatusCode',
+        Common.Label : 'Status Code',
         Common.ValueList : {
             $Type : 'Common.ValueListType',
             CollectionPath : 'BookStatus',

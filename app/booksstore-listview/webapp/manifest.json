@@ -142,6 +142,15 @@
                     "condensedTableLayout": true
                   }
                 }
+              },
+              "content": {
+                "header": {
+                  "actions": {
+                    "DataFieldForAction::BookstoreService.changePublishDate": {
+                      "overflowGroup": 0
+                    }
+                  }
+                }
               }
             }
           }

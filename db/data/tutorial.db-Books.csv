@@ -1,6 +1,6 @@
 ID,title,author_ID,gener_code,publishedOn,pages,price,currency_code,stock,status_code,createdAt,createdBy,modifiedAt,modifiedBy
 8427110a-bd6b-4a86-b6ba-4bb50bc4297c,title-8427110,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2008-09-06,11,22.36,USD,5,A,2020-05-28T00:00:00.000Z,createdBy.50mee@example.net,2002-08-24T00:00:00.000Z,modifiedBy.50mee@example.com
-84271114-2f01-47f9-9499-18a4d82fef7e,title-8427111,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2011-11-18,69,45.1,INR,97,A,2016-06-19T00:00:00.000Z,createdBy.50mef@example.net,2021-04-25T00:00:00.000Z,modifiedBy.50mef@example.org
-84271124-599d-4ef0-a42f-ffcf50e2f9aa,title-8427112,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2001-12-14,57,67,EUR,27,A,2020-10-07T00:00:00.000Z,createdBy.50meg@example.com,2021-01-29T00:00:00.000Z,modifiedBy.50meg@example.com
+84271114-2f01-47f9-9499-18a4d82fef7e,title-8427111,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2011-11-18,55,16.45,INR,97,A,2016-06-19T00:00:00.000Z,createdBy.50mef@example.net,2021-04-25T00:00:00.000Z,modifiedBy.50mef@example.org
+84271124-599d-4ef0-a42f-ffcf50e2f9aa,title-8427112,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2001-12-14,92,57.0,EUR,27,A,2020-10-07T00:00:00.000Z,createdBy.50meg@example.com,2021-01-29T00:00:00.000Z,modifiedBy.50meg@example.com
 84271137-564c-4f79-8798-11e8eb4ff9dd,title-8427113,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2002-05-06,43,87.82,SGD,68,A,2014-10-18T00:00:00.000Z,createdBy.50meh@example.org,2000-08-29T00:00:00.000Z,modifiedBy.50meh@example.com
-8427114f-db27-4b4f-9be6-3c28db039eb8,title-8427114,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2003-03-23,69,92.67,INR,83,A,2022-01-13T00:00:00.000Z,createdBy.50mei@example.org,2003-09-28T00:00:00.000Z,modifiedBy.50mei@example.com
+8427114f-db27-4b4f-9be6-3c28db039eb8,title-8427114,15872107-a673-4a6b-91a0-e02a546ec278,Hobby,2003-03-23,69,15.7,USD,83,A,2022-01-13T00:00:00.000Z,createdBy.50mei@example.org,2003-09-28T00:00:00.000Z,modifiedBy.50mei@example.com

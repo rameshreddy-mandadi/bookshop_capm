@@ -3,6 +3,8 @@ using {
     managed,
     sap.common.Currencies
 } from '@sap/cds/common';
+using {Attachments} from '@cap-js/attachments';
+
 
 namespace tutorial.db;
 
@@ -25,7 +27,7 @@ entity Geners {
         description : String;
 }
 
-type gener : String enum{
+type gener : String enum {
     Fiction = 'Fiction';
     Science = 'Science';
     Cooking = 'Cooking';
@@ -49,9 +51,15 @@ entity BookStatus {
 
 entity Authors : cuid, managed {
 
-    name  : String;
-    books : Association to many Books
-                on books.author = $self;
+    name        : String;
+    fileName    : String;
+    fileType    : String      @Core.IsMediaType;
+    content     : LargeBinary @Core.MediaType                  : fileType
+                              @Core.AcceptableMediaTypes       : ['application/pdf']
+                              @Core.ContentDisposition.Filename: fileName;
+    attachments : Composition of many Attachments;
+    books       : Association to many Books
+                      on books.author = $self;
 }
 
 entity Chapters : cuid, managed {

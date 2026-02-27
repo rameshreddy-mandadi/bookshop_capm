@@ -2,6 +2,17 @@
   "name": "Bookstore",
   "version": "1.0.0",
   "description": "A simple CAP project.",
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "impl": "@cap-js/sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
+  },
   "dependencies": {
     "@cap-js/attachments": "^3.8.0",
     "@sap/cds": "^9",

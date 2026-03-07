@@ -1,6 +1,7 @@
-const { Books } = require('#cds-models/BookstoreService')
+const { Books, Authors } = require('#cds-models/BookstoreService')
 const { Gener, Geners } = require('#cds-models/tutorial/db')
 const cds = require('@sap/cds')
+const { where } = require('@sap/cds/lib/ql/cds-ql')
 
 module.exports = class BookstoreService extends cds.ApplicationService {
   init() {
@@ -46,7 +47,17 @@ module.exports = class BookstoreService extends cds.ApplicationService {
       }
       console.log(books)
     })
-
+    this.after('READ', Authors, async (authors) => {
+      const ids = authors.map(author => author.ID)
+      const bookCounts = await SELECT.from(Books)
+        .columns('author_ID', { func: 'count' })
+        .where({ author_ID: { in: ids } })
+        .groupBy('author_ID');
+      for (const author of authors) {
+        const bookCount = bookCounts.find(bookCount => bookCount.author_ID = author.ID)
+        author.bookCount = bookCount.count
+      }
+    })
     return super.init()
   }
 }

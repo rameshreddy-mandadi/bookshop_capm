@@ -1,0 +1,19 @@
+GET http://localhost:4004/odata/v4/bookstore/$metadata 
+###
+GET http://localhost:4004/odata/v4/bookstore/Chapters 
+###
+
+GET http://localhost:4004/odata/v4/bookstore/Books
+Authorization: Basic cmFtcyAxMjM0
+###
+GET http://localhost:4004/odata/v4/bookstore/Books?$top=2
+Authorization: Basic cmFtcyAxMjM0
+###
+POST http://localhost:4004/odata/v4/bookstore/Books
+Authorization: Basic cmFtcyAxMjM0
+Content-Type: application/json
+
+{
+    "ID" : "8427110a-bd6b-4l86-b6ba-4bb50bd4299c",
+    "title": "Dimple Dip"
+}

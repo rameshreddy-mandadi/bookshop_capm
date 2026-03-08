@@ -10,6 +10,23 @@
         "credentials": {
           "url": "db.sqlite"
         }
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "rams": {
+            "password": "1234",
+            "roles": [
+              "admin"
+            ]
+          },
+          "rosy": {
+            "password": "4321",
+            "roles": [
+              "user-that-can-call-actions"
+            ]
+          }
+        }
       }
     }
   },
